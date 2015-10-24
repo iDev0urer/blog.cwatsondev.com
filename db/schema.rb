@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024212522) do
+ActiveRecord::Schema.define(version: 20151024214305) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",           default: "Untitled", null: false
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20151024212522) do
     t.string   "seo_title"
     t.string   "seo_description"
     t.string   "seo_keywords"
-    t.string   "status"
     t.string   "format"
     t.string   "featured_image"
     t.datetime "created_at",                           null: false
