@@ -16,6 +16,7 @@ gem 'paperclip'
 gem 'react-rails', '~> 1.4.0'
 gem 'rouge'
 gem 'redcarpet'
+gem 'acts-as-taggable-on'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-highlight'
