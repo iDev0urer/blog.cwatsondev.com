@@ -16,4 +16,5 @@
 //= require react_ujs
 //= require components
 //= require semantic
+//= require disqus_rails
 //= require_tree .

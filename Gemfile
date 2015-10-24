@@ -17,7 +17,7 @@ gem 'react-rails', '~> 1.4.0'
 gem 'rouge'
 gem 'redcarpet'
 gem 'acts-as-taggable-on'
-gem 'aasm'
+gem 'disqus_rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-highlight'
