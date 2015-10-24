@@ -12,13 +12,23 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'passenger'
+gem 'paperclip'
+gem 'react-rails', '~> 1.4.0'
+gem 'rouge'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-highlight'
+  gem 'rails-assets-semantic'
+end
 
 group :development, :test do
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
+  gem 'better_errors'
   gem 'spring'
 end
 
