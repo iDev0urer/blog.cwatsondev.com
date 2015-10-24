@@ -15,6 +15,7 @@ gem 'passenger'
 gem 'paperclip'
 gem 'react-rails', '~> 1.4.0'
 gem 'rouge'
+gem 'redcarpet'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-highlight'

@@ -141,6 +141,7 @@ GEM
       execjs
       rails (>= 3.2)
       tilt
+    redcarpet (3.3.3)
     rouge (1.10.1)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -192,6 +193,7 @@ DEPENDENCIES
   rails-assets-highlight!
   rails-assets-semantic!
   react-rails (~> 1.4.0)
+  redcarpet
   rouge
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
