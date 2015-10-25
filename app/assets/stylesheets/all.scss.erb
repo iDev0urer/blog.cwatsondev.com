@@ -2,12 +2,23 @@
 	require 'fastimage'
 	header_bg_url = Setting['site.header-background']
 	header_text_color = Setting['site.header-text-color']
-	top_header_height = FastImage.size(header_bg_url)[1] # FastImage returns an array [0,0] width,height
-	site_title_margin_top = top_header_height/2
+	top_header_height = Setting['site.header-height'] ? Setting['site.header-height'] : FastImage.size(header_bg_url)[1]
+	site_title_margin_top = top_header_height/2.4
 %>
 
-.post-list.post {
+a.post_anchor {
+	span, p, div, b, i, strong {
+		color: $tuatara;
+	}
 
+	&:hover > .post {
+		background-color: $white-smoke;
+	}
+}
+
+.post-list.post {
+	@media #{$small-only} { padding: 20px; }
+	@media #{$medium-up} { padding: 60px; }
 }
 
 #top-header {
@@ -35,11 +46,17 @@
 		.site-title {
 			color: <%= header_text_color %>;
 		}
+
+		.site-subtitle {
+			color: <%= header_text_color %>;
+			margin-top: -15px;
+		}
 	}
 }
 
 #post-list {
-	padding: 80px 0;
+
+	padding: 40px;
 
 	.no-posts {
 		text-align: center;
@@ -50,6 +67,54 @@
 
 		.subtitle {
 			margin-top: -15px;
+		}
+	}
+}
+
+
+
+
+
+#main-footer {
+	padding: 80px 0;
+	background-color: #3d4659;
+	text-align: center;
+
+	.margin-zero-logo {
+		margin-bottom: 20px;
+
+		@media #{$large-up} {
+			margin-bottom: 0;
+		}
+	}
+
+	.social-icons {
+
+		@media #{$large-up} {
+			text-align: right;
+		}
+
+		.icon {
+			width: 40px;
+			height: 40px;
+			display: inline-block;
+			margin-left: 20px;
+			border-radius: 50%;
+		}
+
+		.icon-facebook {
+			background: #FFF image_url('icons/facebook.png') center no-repeat;
+			background-size: 30px;
+		}
+
+		.icon-twitter {
+			background: #FFF image_url('icons/twitter.png') center no-repeat;
+			background-size: 30px;
+		}
+
+		.icon-behance {
+			background: #FFF image_url('icons/behance.png') center no-repeat;
+			background-size: 30px;
 		}
 	}
 }
