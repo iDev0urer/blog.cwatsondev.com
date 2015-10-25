@@ -11,20 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024214305) do
+ActiveRecord::Schema.define(version: 20151025065920) do
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",           default: "Untitled", null: false
-    t.text     "content",         default: ""
+    t.string   "title",            default: "Untitled", null: false
+    t.text     "content",          default: ""
     t.string   "slug"
     t.string   "seo_title"
     t.string   "seo_description"
     t.string   "seo_keywords"
     t.string   "format"
     t.string   "featured_image"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "state",            default: "draft"
+    t.boolean  "comments_enabled", default: true
+    t.text     "excerpt"
   end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "var",                   null: false
+    t.text     "value"
+    t.integer  "thing_id"
+    t.string   "thing_type", limit: 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

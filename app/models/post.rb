@@ -1,8 +1,6 @@
 class Post < ActiveRecord::Base
-  include AASM
-  include Redcarpeted
-  redcarpet :content
-
+  include Krammed
+  kram :content
   acts_as_taggable
 
 end

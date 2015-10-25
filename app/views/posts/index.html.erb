@@ -1,2 +1,28 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<header id="top-header">
+	<div class="row">
+		<div id="marginzero-logo"></div>
+	</div>
+	<div class="row title">
+		<h1 class="site-title"><%= Setting['site.title'] %></h1>
+	</div>
+</header>
+
+<section id="post-list">
+  <div class="row">
+	  <% if @posts.count < 1 %>
+		<div class="no-posts">
+		  <h1>There are no posts here</h1>
+		  <h3 class="subtitle">Why not go add one and come back?</h3>
+		</div>
+	  <% else %>
+		<% @posts.each do |p| %>
+			<div id="<%= "post-#{p.id}" %>" class="post-list post small-12 medium-8 medium-centered columns">
+			  <h2 class="post-title"><%= p.title %></h2>
+			  <div class="post-content">
+				<%== p.excerpt %>
+			  </div>
+			</div>
+		<% end %>
+	  <% end %>
+  </div>
+</section>

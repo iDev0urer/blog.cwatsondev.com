@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require react
 //= require react_ujs
 //= require components
-//= require semantic
 //= require disqus_rails
 //= require_tree .
+
+$(function(){ $(document).foundation(); });

@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
+    aasm (4.3.0)
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
       actionview (= 4.2.4)
@@ -39,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
+    addressable (2.3.8)
     arel (6.0.3)
     babel-source (5.8.26)
     babel-transpiler (0.7.0)
@@ -73,6 +75,11 @@ GEM
       railties (~> 4.0)
     erubis (2.7.0)
     execjs (2.6.0)
+    fastimage (1.7.0)
+      addressable (~> 2.3, >= 2.3.5)
+    foundation-rails (5.5.3.2)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -84,6 +91,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kramdown (1.9.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -119,9 +127,6 @@ GEM
       railties (= 4.2.4)
       sprockets-rails
     rails-assets-highlight (8.9.1)
-    rails-assets-jquery (2.1.4)
-    rails-assets-semantic (2.1.4)
-      rails-assets-jquery (>= 1.8)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -130,6 +135,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails-settings-cached (0.4.6)
+      rails (>= 4.2.0)
     railties (4.2.4)
       actionpack (= 4.2.4)
       activesupport (= 4.2.4)
@@ -144,7 +151,6 @@ GEM
       execjs
       rails (>= 3.2)
       tilt
-    redcarpet (3.3.3)
     rouge (1.10.1)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -184,21 +190,24 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   acts-as-taggable-on
   better_errors
   byebug
   coffee-rails (~> 4.1.0)
   disqus_rails
   dotenv-rails
+  fastimage
+  foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
+  kramdown
   paperclip
   passenger
   rails (= 4.2.4)
   rails-assets-highlight!
-  rails-assets-semantic!
+  rails-settings-cached (~> 0.4.0)
   react-rails (~> 1.4.0)
-  redcarpet
   rouge
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

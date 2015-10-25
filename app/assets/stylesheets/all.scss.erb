@@ -1,0 +1,55 @@
+<%
+	require 'fastimage'
+	header_bg_url = Setting['site.header-background']
+	header_text_color = Setting['site.header-text-color']
+	top_header_height = FastImage.size(header_bg_url)[1] # FastImage returns an array [0,0] width,height
+	site_title_margin_top = top_header_height/2
+%>
+
+.post-list.post {
+
+}
+
+#top-header {
+	width: 100%;
+	background-image: url(<%= header_bg_url %>);
+	height: <%= "#{top_header_height}px" %>;
+	max-height: 700px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center;
+
+	#marginzero-logo {
+		margin-top: 30px;
+		width: 63px;
+		height: 50px;
+		background: transparent image_url('Margin-Zero-Logo-Light.png') center no-repeat;
+		background-size: 63px 50px;
+		position: absolute;
+	}
+
+	.row.title {
+		text-align: center;
+		margin-top: convert-to-rem(<%= "#{site_title_margin_top}px" %>) - $h1-font-size/2;
+
+		.site-title {
+			color: <%= header_text_color %>;
+		}
+	}
+}
+
+#post-list {
+	padding: 80px 0;
+
+	.no-posts {
+		text-align: center;
+
+		h1, h3 {
+			margin: 0;
+		}
+
+		.subtitle {
+			margin-top: -15px;
+		}
+	}
+}

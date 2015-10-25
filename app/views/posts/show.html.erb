@@ -1,1 +1,11 @@
-<%- disqus_thread %>
+<h1 class="post-title"><%= @post.title %></h1>
+
+<div class="post-content">
+  <%== @post.content_html %>
+</div>
+
+<% if @post.comments_enabled? %>
+	<div class="disqus post-comments">
+	  <%- disqus_thread %>
+	</div>
+<% end %>

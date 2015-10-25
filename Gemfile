@@ -15,13 +15,17 @@ gem 'passenger'
 gem 'paperclip'
 gem 'react-rails', '~> 1.4.0'
 gem 'rouge'
-gem 'redcarpet'
+gem 'kramdown'
 gem 'acts-as-taggable-on'
 gem 'disqus_rails'
+gem 'aasm'
+gem 'rails-settings-cached', '~> 0.4.0'
+
+gem 'foundation-rails'
+gem 'fastimage'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-highlight'
-  gem 'rails-assets-semantic'
 end
 
 group :development, :test do
